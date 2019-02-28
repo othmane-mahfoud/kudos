@@ -1,0 +1,19 @@
+{
+  "name": "backend_kudos",
+  "version": "1.0.0",
+  "description": "kudos is a LMS that organizes the human and financial resources of learning centers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Othmane Mahfoud",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.4",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.0",
+    "mongoose": "^5.4.15"
+  }
+}

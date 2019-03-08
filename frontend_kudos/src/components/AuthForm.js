@@ -10,9 +10,16 @@ export default class AuthForm extends Component {
       profileImageUrl : ""
     };
   }
+
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+
   render() {
     const { email, username, password, profileImageUrl } = this.state;
-    const { heading, buttonText } = this.props;
+    const { heading, buttonText, signUp } = this.props;
     return(
       <div>
         <div className = "row justify-content-md-center text-center">
@@ -34,9 +41,29 @@ export default class AuthForm extends Component {
                 id = "password"
                 name = "password"
                 onChange = {this.handleChange}
-                value = {email}
                 type = "password"
               />
+              {signUp && (
+                <div>
+                  <label htmlFor = "username">Username:</label>
+                  <input
+                    className = "form-control"
+                    id = "username"
+                    name = "username"
+                    onChange = {this.handleChange}
+                    value = {username}
+                    type = "text"
+                  />
+                  <label htmlFor = "img-url">Profile Image URL:</label>
+                  <input
+                    className = "form-control"
+                    id = "img-url"
+                    name = "profileImageUrl"
+                    onChange = {this.handleChange}
+                    type = "text"
+                  />
+                </div>
+              )}
             </form>
           </div>
         </div>

@@ -16,7 +16,10 @@ const Main = props => {
           exact path="/signin"
           render={props => {
             return(
-              <AuthForm buttonText="Log in" heading="Welcome Back" {...props}/>
+              <AuthForm
+                buttonText="Log in"
+                heading="Welcome Back" {...props}
+              />
             );
           }}
         />
@@ -24,7 +27,11 @@ const Main = props => {
           exact path="/signup"
           render={props => {
             return(
-              <AuthForm buttonText="Sign up" heading="Join Kudos today!" {...props}/>
+              <AuthForm
+                signUp
+                buttonText="Sign up"
+                heading="Join Kudos today!" {...props}
+              />
             );
           }}
         />

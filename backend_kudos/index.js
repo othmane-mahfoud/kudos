@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const errorHandler = require("./handlers/error");
 const authRoutes = require("./routes/auth");
 const messagesRoutes = require("./routes/messages");
+const coursesRoutes = require("./routes/courses");
 const {loginRequired, ensureCorrectUser} = require("./middleware/auth");
 const db = require("./models");
 const PORT = 8081;
@@ -16,6 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users/:id/messages", loginRequired, ensureCorrectUser, messagesRoutes);
+app.use("/api/users/:id/courses", loginRequired, ensureCorrectUser, coursesRoutes);
 app.get("/api/messages", loginRequired, async function(req, res, next){
   try {
     let messages = await db.Message.find()
@@ -25,6 +27,16 @@ app.get("/api/messages", loginRequired, async function(req, res, next){
         profileImageUrl: true
       });
     return res.status(200).json(messages);
+  }
+  catch(err) {
+    return next(err);
+  }
+});
+app.get("/api/courses", loginRequired, async function(req, res, next){
+  try {
+    let courses = await db.Course.find()
+      .sort({courseCode: "desc"});
+    return res.status(200).json(courses);
   }
   catch(err) {
     return next(err);

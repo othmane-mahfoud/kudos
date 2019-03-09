@@ -31,6 +31,16 @@ ul.nav.navbar-nav li {
   margin: 0 0.5rem;
 }
 
+ul.nav.navbar-nav li a {
+  color: white;
+}
+
+ul.nav.navbar-nav li a:hover {
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .onboarding > .navbar {
   background-image: url("./images/nav-bg.png");
   background-size: 100% 100%;
@@ -55,4 +65,32 @@ ul.nav.navbar-nav li {
   background-size: cover;
   color: #fff;
   text-shadow: 0 0 8px #66757f;
+}
+
+/* Index */
+
+#messages .list-group-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 7px 20px 12px;
+}
+
+#messages:not(.no-hover) .list-group-item:hover{
+  background-color: #e6ecf0;
+}
+
+.timeline-image {
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+  margin: 2px 30px 10px 10px;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+a.btn.btn-danger,
+a.btn.btn-danger:hover {
+  color: white;
 }

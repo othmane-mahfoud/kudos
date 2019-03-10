@@ -16,8 +16,7 @@ class CourseList extends Component {
         courseCode={c.courseCode}
         title={c.title}
         school={c.school}
-        // removeCourse={removeCourse.bind(this, c.creator._id, c._id)}
-        // isCorrectUser={currentUser === c.creator._id}
+        removeCourse={removeCourse.bind(this, currentUser, c._id)}
       />
     ));
     return (

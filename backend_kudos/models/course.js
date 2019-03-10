@@ -30,27 +30,19 @@ const courseSchema = mongoose.Schema({
   }
 );
 
-courseSchema.virtual('school.picture')
-  .get(function() {
-    if(this.school === "SSE")
-      return "../images/sse.png";
-    else if(this.school === "SBA")
-      return "../images/sba.png";
-    else if(this.school === "SHSS")
-      return "../images/shss.png"
-  });
+//to do: add hook for SP
 
-courseSchema.pre("remove", async function(next){
-  try{
-    let user = await User.findById(this.user);
-    user.courses.remove(this.id);
-    await user.save();
-    return next();
-  }
-  catch(err){
-    return next(err);
-  }
-})
+// courseSchema.pre("remove", async function(next){
+//   try{
+//     let user = await User.findById(this.user);
+//     user.courses.remove(this.id);
+//     await user.save();
+//     return next();
+//   }
+//   catch(err){
+//     return next(err);
+//   }
+// });
 
 const Course = mongoose.model("Course", courseSchema);
 

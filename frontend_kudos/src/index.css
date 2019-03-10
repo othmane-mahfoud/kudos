@@ -65,12 +65,22 @@ ul.nav.navbar-nav li a:hover {
   align-items: center;
   justify-content: center;
   z-index: -1;
-  background-image: url("./images/titiz.jpg");
+  background-image: url("./images/blackboard.jpg");
   text-align: center;
   background-position: center center;
   background-size: cover;
   color: #fff;
   text-shadow: 0 0 15px #66757f;
+}
+
+h1.chalk {
+  font-family: 'Indie Flower', cursive;
+  font-size: 50px;
+}
+
+h3.chalk {
+  font-family: 'Indie Flower', cursive;
+  font-size: 40px;
 }
 
 /* Index */
@@ -91,12 +101,19 @@ ul.nav.navbar-nav li a:hover {
   padding: 7px 20px 12px;
 }
 */
+
 #courses:not(.no-hover) .list-group-item:hover{
   background-color: #e6ecf0;
 }
 
-.dateCreated {
+/* .dateCreated {
   float: right;
+} */
+
+a.deleteCourse {
+  float: right;
+  margin-right: 3px;
+  margin-top: 10px;
 }
 
 .timeline-image {

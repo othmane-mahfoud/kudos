@@ -21,10 +21,10 @@ class CourseForm extends Component {
   handleNewCourse = event => {
     event.preventDefault();
     this.props.addCourse(this.state.courseCode, this.state.title, this.state.school);
-    this.setState({ 
+    this.setState({
       courseCode: "",
       title: "",
-      school: "" 
+      school: ""
     });
     this.props.history.push("/");
   };

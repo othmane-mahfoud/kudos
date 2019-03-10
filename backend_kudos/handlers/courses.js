@@ -4,7 +4,9 @@ exports.addCourse = async function(req, res, next){
   try {
     let course = await db.Course.create({
       courseCode: req.body.courseCode,
-      title: req.body.title
+      title: req.body.title,
+      school: req.body.school,
+      creator: req.params.id
     });
     // let foundUser = await db.User.findById(req.params.id);
     // foundUser.messages.push(message.id);
@@ -23,7 +25,7 @@ exports.addCourse = async function(req, res, next){
 exports.getCourse = async function(req, res, next){
   try {
     let course = await db.Course.find(req.params.course_id);
-    return res.status(200).json(message);
+    return res.status(200).json(course);
   }
   catch(e) {
     next(e);

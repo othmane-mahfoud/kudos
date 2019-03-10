@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users/:id/messages", loginRequired, ensureCorrectUser, messagesRoutes);
-app.use("/api/users/:id/courses", loginRequired, ensureCorrectUser, coursesRoutes);
+app.use("/api/users/:id/courses", loginRequired, coursesRoutes);
 app.get("/api/messages", loginRequired, async function(req, res, next){
   try {
     let messages = await db.Message.find()
@@ -35,7 +35,7 @@ app.get("/api/messages", loginRequired, async function(req, res, next){
 app.get("/api/courses", loginRequired, async function(req, res, next){
   try {
     let courses = await db.Course.find()
-      .sort({courseCode: "desc"});
+      .sort({courseCode: "asc"});
     return res.status(200).json(courses);
   }
   catch(err) {

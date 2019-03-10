@@ -11,6 +11,13 @@ const courseSchema = mongoose.Schema({
       type: String,
       required: true
     },
+    school: {
+      type: String
+    },
+    creator: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User"
+    },
     serviceProviders: [
       {
         type: mongoose.Schema.Types.ObjectId,
@@ -22,6 +29,16 @@ const courseSchema = mongoose.Schema({
     timestamps: true
   }
 );
+
+courseSchema.virtual('school.picture')
+  .get(function() {
+    if(this.school === "SSE")
+      return "../images/sse.png";
+    else if(this.school === "SBA")
+      return "../images/sba.png";
+    else if(this.school === "SHSS")
+      return "../images/shss.png"
+  });
 
 courseSchema.pre("remove", async function(next){
   try{

@@ -4,7 +4,8 @@ const router = express.Router({mergeParams: true});
 const {
   addCourse,
   getCourse,
-  deleteCourse
+  deleteCourse,
+  editCourse
 } = require("../handlers/courses");
 
 router.route("/")
@@ -12,6 +13,7 @@ router.route("/")
 
 router.route("/:course_id")
   .get(getCourse)
-  .delete(deleteCourse);
+  .delete(deleteCourse)
+  .put(editCourse);
 
 module.exports = router;

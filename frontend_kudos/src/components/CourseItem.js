@@ -42,7 +42,7 @@ const CourseItem = ({
             </Moment>
             </i>
             <a className = "btn btn-sm btn-danger deleteCourse" onClick = {removeCourse}>Delete</a>
-            <a className = "btn btn-sm btn-info text-white deleteCourse" onClick = {removeCourse}>Edit</a>
+            <Link className = "btn btn-sm btn-info text-white deleteCourse" to = {removeCourse}>Edit</Link>
           </span>
         </span>
       </li>

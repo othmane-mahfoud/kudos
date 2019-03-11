@@ -42,3 +42,14 @@ exports.deleteCourse = async function(req, res, next){
     return next(e);
   }
 };
+
+exports.editCourse = async function(req, res, next){
+  try {
+    let foundCourse = await db.Course.findOneAndUpdate({_id: req.params.course_id}, req.body, {new: true});
+    await foundCourse.save();
+    return res.status(200).json(foundCourse);
+  }
+  catch(e) {
+    return next(e);
+  }
+};

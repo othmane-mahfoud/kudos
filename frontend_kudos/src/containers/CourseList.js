@@ -35,7 +35,7 @@ class CourseList extends Component {
 function mapStateToProps(state) {
   return {
     courses: state.courses,
-    currentUser: state.currentUser.user.id
+    currentUser: state.currentUser.user.id,
   };
 }
 

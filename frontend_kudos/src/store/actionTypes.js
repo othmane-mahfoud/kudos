@@ -4,4 +4,6 @@ export const SET_CURRENT_USER = "SET_CURRENT_USER";
 export const LOAD_MESSAGES = "LOAD_MESSAGES";
 export const REMOVE_MESSAGE = "REMOVE_MESSAGE";
 export const LOAD_COURSES = "LOAD_COURSES";
+export const GET_COURSE = "GET_COURSE";
+export const EDIT_COURSE = "EDIT_COURSE";
 export const REMOVE_COURSE = "REMOVE_COURSE";

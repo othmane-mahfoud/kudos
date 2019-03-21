@@ -24,7 +24,7 @@ exports.addCourse = async function(req, res, next){
 
 exports.getCourse = async function(req, res, next){
   try {
-    let course = await db.Course.find(req.params.course_id);
+    let course = await db.Course.findById(req.params.course_id);
     return res.status(200).json(course);
   }
   catch(e) {

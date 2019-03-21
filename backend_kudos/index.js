@@ -6,6 +6,7 @@ const bodyParser = require("body-parser");
 const errorHandler = require("./handlers/error");
 const authRoutes = require("./routes/auth");
 const coursesRoutes = require("./routes/courses");
+const usersRoutes = require("./routes/users");
 const {loginRequired, ensureCorrectUser} = require("./middleware/auth");
 const db = require("./models");
 const PORT = 8081;
@@ -15,8 +16,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use("/api/auth", authRoutes);
-// app.use("/api/users/:id/messages", loginRequired, ensureCorrectUser, messagesRoutes);
 app.use("/api/users/:id/courses", loginRequired, coursesRoutes);
+app.use("/api/users", loginRequired, usersRoutes);
+// app.use("/api/users/:id/messages", loginRequired, ensureCorrectUser, messagesRoutes);
 // app.get("/api/messages", loginRequired, async function(req, res, next){
 //   try {
 //     let messages = await db.Message.find()
@@ -31,11 +33,23 @@ app.use("/api/users/:id/courses", loginRequired, coursesRoutes);
 //     return next(err);
 //   }
 // });
+
 app.get("/api/courses", loginRequired, async function(req, res, next){
   try {
     let courses = await db.Course.find()
       .sort({courseCode: "asc"});
     return res.status(200).json(courses);
+  }
+  catch(err) {
+    return next(err);
+  }
+});
+
+app.get("/api/users", loginRequired, async function(req, res, next){
+  try {
+    let users = await db.User.find()
+      .sort({firstName: "asc"});
+    return res.status(200).json(users);
   }
   catch(err) {
     return next(err);

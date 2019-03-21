@@ -12,11 +12,13 @@ class CourseList extends Component {
     let courseList = courses.map(c => (
       <CourseItem
         key={c._id}
+        courseId={c._id}
         date={c.createAt}
         courseCode={c.courseCode}
         title={c.title}
         school={c.school}
         removeCourse={removeCourse.bind(this, currentUser, c._id)}
+        currentUser={currentUser}
       />
     ));
     return (

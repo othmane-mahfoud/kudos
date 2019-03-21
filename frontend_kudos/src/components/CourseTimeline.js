@@ -5,7 +5,9 @@ import CourseList from "../containers/CourseList";
 const CourseTimeline = props => {
   return (
     <div className = "row">
-      <CourseList />
+      <CourseList
+        currentUser = {props.currentUser}
+      />
     </div>
   );
 }

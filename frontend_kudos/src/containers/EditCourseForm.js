@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { updateCourse } from "../store/actions/courses";
+import { showCourse, updateCourse } from "../store/actions/courses";
 
-class CourseForm extends Component {
+class EditCourseForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +20,8 @@ class CourseForm extends Component {
 
   handleNewCourse = event => {
     event.preventDefault();
-    this.props.updateCourse(this.state.courseCode, this.state.title, this.state.school);
+    // this.props.updateCourse(this.state.courseCode, this.state.title, this.state.school);
+    this.props.updateCourse(this.props.match.params.id, this.props.match.params.course_id);
     this.setState({
       courseCode: "",
       title: "",
@@ -35,6 +36,8 @@ class CourseForm extends Component {
         {this.props.errors.course && (
           <div className="alert alert-danger">{this.props.errors.course}</div>
         )}
+        <p>{this.props.match.params.id}</p>
+        <p></p>
         <label htmlFor = "courseCode">Course Code:</label>
         <input
           type="text"
@@ -60,7 +63,7 @@ class CourseForm extends Component {
           onChange={this.handleChange}
         />
         <button type="submit" className="btn btn-success">
-          Add Course!
+          Save Changes
         </button>
       </form>
     );
@@ -73,4 +76,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { updateCourse })(CourseForm);
+export default connect(mapStateToProps, { updateCourse, showCourse })(EditCourseForm);

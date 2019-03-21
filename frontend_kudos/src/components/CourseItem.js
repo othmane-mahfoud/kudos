@@ -7,11 +7,13 @@ import SBACourseImg from "../images/sba.png";
 import SHSSCourseImg from "../images/shss.png";
 
 const CourseItem = ({
+  courseId,
   date,
   courseCode,
   title,
   school,
   removeCourse,
+  currentUser,
   isCorrectUser
 }) => {
   var courseImage = DefaultCourseImg;
@@ -42,7 +44,7 @@ const CourseItem = ({
             </Moment>
             </i>
             <a className = "btn btn-sm btn-danger deleteCourse" onClick = {removeCourse}>Delete</a>
-            <Link className = "btn btn-sm btn-info text-white deleteCourse" to = {removeCourse}>Edit</Link>
+            <Link className = "btn btn-sm btn-info text-white deleteCourse" to = {`/users/${currentUser}/courses/${courseId}/edit`}>Edit</Link>
           </span>
         </span>
       </li>

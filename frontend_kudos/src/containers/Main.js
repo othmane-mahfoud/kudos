@@ -59,6 +59,7 @@ const Main = props => {
         <Route
           path = "/users/:id/courses/:course_id/edit"
           component = {withAuth(EditCourseForm)}
+          currentUser
         />
       </Switch>
 

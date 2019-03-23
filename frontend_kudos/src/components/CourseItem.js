@@ -49,18 +49,18 @@ const CourseItem = ({
     //     </span>
     //   </li>
     // </div>
-    <div class="col-sm-3">
-      <div class="card">
+    <div className="col-sm-3">
+      <div className="card">
         <img
           src = {courseImage}
-          class = "card-img-top"
+          className = "card-img-top"
           alt = {school}
         />
-        <div class="card-body">
-          <h5 class="card-title">{title}</h5>
-          <p class="card-text"><small class="text-muted">{courseCode}</small></p>
-          <a className = "btn btn-sm btn-danger deleteCourse" onClick = {removeCourse}>Delete</a>
-          <Link className = "btn btn-sm btn-info text-white deleteCourse" to = {`/users/${currentUser}/courses/${courseId}/edit`}>Edit</Link>
+        <div className="card-body">
+          <h5 className="card-title">{title}</h5>
+          <p className="card-text"><small class="text-muted">{courseCode}</small></p>
+          <a className = "mb-2 btn btn-sm btn-danger deleteCourse" onClick = {removeCourse}>Delete</a>
+          <Link className = "mb-2 btn btn-sm btn-info text-white deleteCourse" to = {`/users/${currentUser}/courses/${courseId}/edit`}>Edit</Link>
         </div>
       </div>
     </div>

@@ -62,7 +62,7 @@ class EditCourseForm extends Component {
           value={this.state.school}
           onChange={this.handleChange}
         />
-        <button type="submit" className="btn btn-success">
+        <button type="submit" className="mt-3 btn btn-success">
           Save Changes
         </button>
       </form>

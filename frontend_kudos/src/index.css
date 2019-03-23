@@ -95,28 +95,23 @@ h3.chalk {
   background-color: #e6ecf0;
 }
 
-/*#courses .list-group-item {
-  display: flex;
-  align-items: flex-start;
-  padding: 7px 20px 12px;
-}
-*/
-
 #courses:not(.no-hover) .list-group-item:hover{
   background-color: #e6ecf0;
 }
-
-/* .dateCreated {
-  float: right;
-} */
 
 .card {
   height: 450px;
   margin-bottom: 10px;
 }
 
-.card-img-top{
+.card-img-top {
   padding: 20px;
+}
+
+.card-title {
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
 }
 
 a.deleteCourse {
@@ -126,7 +121,6 @@ a.deleteCourse {
 }
 
 .timeline-image {
-  /*border-radius: 50px;*/
   height: 40px;
   width: 40px;
   margin: 2px 30px 10px 10px;

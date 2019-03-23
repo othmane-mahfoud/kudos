@@ -4,7 +4,7 @@ import CourseList from "../containers/CourseList";
 
 const CourseTimeline = props => {
   return (
-    <div className = "row">
+    <div>
       <CourseList
         currentUser = {props.currentUser}
       />

@@ -110,6 +110,15 @@ h3.chalk {
   float: right;
 } */
 
+.card {
+  height: 450px;
+  margin-bottom: 10px;
+}
+
+.card-img-top{
+  padding: 20px;
+}
+
 a.deleteCourse {
   float: right;
   margin-right: 3px;

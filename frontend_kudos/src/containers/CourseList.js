@@ -22,12 +22,18 @@ class CourseList extends Component {
       />
     ));
     return (
-      <div className="row col-sm-12">
-        <div className="offset-1 col-sm-10">
-          <h1> Course List </h1>
-          <ul className="list-group" id="courses">
-            {courseList}
-          </ul>
+      // <div className="row col-sm-12">
+      //   <div className="offset-1 col-sm-10">
+      //     <h1> Course List </h1>
+      //     <ul className="list-group" id="courses">
+      //       {courseList}
+      //     </ul>
+      //   </div>
+      // </div>
+      <div>
+        <h1>Course List</h1>
+        <div className = "row">
+          {courseList}
         </div>
       </div>
     );

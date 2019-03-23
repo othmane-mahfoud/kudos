@@ -14,6 +14,9 @@ const courseSchema = mongoose.Schema({
     school: {
       type: String
     },
+    picture: {
+      type: String,
+    },
     creator: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User"

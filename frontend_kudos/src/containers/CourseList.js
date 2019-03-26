@@ -1,11 +1,21 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchCourses, removeCourse } from "../store/actions/courses";
 import CourseItem from "../components/CourseItem";
 
 class CourseList extends Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     filtered: []
+  //   };
+  // }
   componentDidMount() {
     this.props.fetchCourses();
+    // this.setState({
+    //   filtered: this.props.items
+    // });
   }
   render() {
     const { courses, removeCourse, currentUser } = this.props;
@@ -23,16 +33,9 @@ class CourseList extends Component {
       />
     ));
     return (
-      // <div className="row col-sm-12">
-      //   <div className="offset-1 col-sm-10">
-      //     <h1> Course List </h1>
-      //     <ul className="list-group" id="courses">
-      //       {courseList}
-      //     </ul>
-      //   </div>
-      // </div>
       <div>
         <h1 className = "pageHeaders">Course List</h1>
+        <Link to = {`/users/${this.props.currentUser.user.id}/courses/new`} className = "btn btn-info mb-3">Add Course</Link>
         <div className = "row">
           {courseList}
         </div>
@@ -44,7 +47,7 @@ class CourseList extends Component {
 function mapStateToProps(state) {
   return {
     courses: state.courses,
-    currentUser: state.currentUser.user.id,
+    currentUser: state.currentUser,
   };
 }
 

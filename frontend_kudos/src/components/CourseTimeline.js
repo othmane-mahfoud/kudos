@@ -7,6 +7,7 @@ const CourseTimeline = props => {
     <div>
       <CourseList
         currentUser = {props.currentUser}
+        className = "courseList"
       />
     </div>
   );

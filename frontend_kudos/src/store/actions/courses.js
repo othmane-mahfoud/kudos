@@ -58,10 +58,10 @@ export const removeCourse = (user_id, course_id) => {
   }
 }
 
-export const addCourse = (courseCode, title, school) => (dispatch, getState) => {
+export const addCourse = (courseCode, title, school, imageUrl) => (dispatch, getState) => {
   let { currentUser } = getState();
   const id = currentUser.user.id;
-  return apiCall("post", `/api/users/${id}/courses`, { courseCode, title, school })
+  return apiCall("post", `/api/users/${id}/courses`, { courseCode, title, school, imageUrl })
     .then(res => {})
-    .catch(err => addError(err.message));
+    .catch(err => dispatch(addError(err.message)));
 };

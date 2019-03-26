@@ -2,10 +2,18 @@ body {
   background-color: #e6ecf0;
 }
 
+.main {
+  margin-top: 70px;
+}
+
 /* Nav */
 
 .navbar {
   margin-bottom: 1rem;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 .navbar a {
@@ -100,7 +108,7 @@ h3.chalk {
 }
 
 .card {
-  height: 450px;
+  height: 420px;
   margin-bottom: 10px;
 }
 
@@ -134,4 +142,57 @@ a.deleteCourse {
 a.btn.btn-danger,
 a.btn.btn-danger:hover {
   color: white;
+}
+
+/* Sidebar */
+
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 180px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 0; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #384A5C;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 15px;
+  /* margin-top: 64px; */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 12px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #e6ecf0;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #6AAEE1;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* Course list */
+
+.courseList {
+  margin-left: 180px;
+  margin-top: 70px;
+}
+
+.sidenav-brand > span{
+  margin-top: 5px;
+  color: #384A5C;
+}
+
+.pageHeaders {
+  color: #384A5C;
 }

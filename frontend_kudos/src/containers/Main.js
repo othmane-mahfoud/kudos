@@ -17,7 +17,7 @@ const Main = props => {
       <Switch>
         <Route
           exact path = "/"
-          render = {props => <Homepage currentUser = {currentUser} {...props} />}
+          render = {props => <Homepage currentUser = {currentUser} {...props}/>}
         />
         <Route
           exact path = "/signin"

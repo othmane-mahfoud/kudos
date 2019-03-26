@@ -12,19 +12,25 @@ const CourseItem = ({
   courseCode,
   title,
   school,
+  imageUrl,
   removeCourse,
   currentUser,
   isCorrectUser
 }) => {
   var courseImage = DefaultCourseImg;
-  if(school === "SSE") {
-    courseImage = SSECourseImg;
+  if(imageUrl){
+    courseImage = imageUrl;
   }
-  else if(school === "SBA") {
-    courseImage = SBACourseImg;
-  }
-  else if(school === "SHSS"){
-    courseImage = SHSSCourseImg;
+  else{
+    if(school === "SSE") {
+      courseImage = SSECourseImg;
+    }
+    else if(school === "SBA") {
+      courseImage = SBACourseImg;
+    }
+    else if(school === "SHSS"){
+      courseImage = SHSSCourseImg;
+    }
   }
   return (
     // <div>

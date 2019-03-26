@@ -6,5 +6,6 @@ export const addError = error => ({
 });
 
 export const removeError = error => ({
-  type: REMOVE_ERROR
+  type: REMOVE_ERROR,
+  error
 });

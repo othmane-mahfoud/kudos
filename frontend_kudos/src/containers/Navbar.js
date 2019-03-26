@@ -34,6 +34,9 @@ class Navbar extends Component {
           (
             <ul className="nav navbar-nav justify-content-end ml-auto">
               <li className="nav-item">
+                <Link to="/signin">{this.props.currentUser._id}</Link>
+              </li>
+              <li className="nav-item">
                 <Link to="/signup">Sign Up</Link>
               </li>
               <li className="nav-item">

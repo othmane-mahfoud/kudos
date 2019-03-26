@@ -2,6 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 // import MessageTimeline from "./MessageTimeline";
 import CourseTimeline from "./CourseTimeline";
+import Sidenav from "../containers/Sidenav";
 
 const Homepage = ({currentUser}) => {
   if(!currentUser.isAuthenticated) {
@@ -17,7 +18,12 @@ const Homepage = ({currentUser}) => {
   }
   else {
     return (
-        < CourseTimeline />
+      <div>
+        < Sidenav />
+        <div className = "courseList">
+          < CourseTimeline />
+        </div>
+      </div>
     );
   }
 }

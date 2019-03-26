@@ -17,6 +17,7 @@ class CourseList extends Component {
         courseCode={c.courseCode}
         title={c.title}
         school={c.school}
+        imageUrl={c.imageUrl}
         removeCourse={removeCourse.bind(this, currentUser, c._id)}
         currentUser={currentUser}
       />
@@ -31,7 +32,7 @@ class CourseList extends Component {
       //   </div>
       // </div>
       <div>
-        <h1>Course List</h1>
+        <h1 className = "pageHeaders">Course List</h1>
         <div className = "row">
           {courseList}
         </div>

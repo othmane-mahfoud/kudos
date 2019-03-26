@@ -6,7 +6,8 @@ exports.addCourse = async function(req, res, next){
       courseCode: req.body.courseCode,
       title: req.body.title,
       school: req.body.school,
-      creator: req.params.id
+      creator: req.params.id,
+      imageUrl: req.body.imageUrl
     });
     // let foundUser = await db.User.findById(req.params.id);
     // foundUser.messages.push(message.id);

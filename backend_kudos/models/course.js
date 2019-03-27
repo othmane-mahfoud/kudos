@@ -21,6 +21,9 @@ const courseSchema = mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: "User"
     },
+    imageUrl: {
+      type: String
+    },
     serviceProviders: [
       {
         type: mongoose.Schema.Types.ObjectId,

@@ -17,7 +17,19 @@ const Main = props => {
       <Switch>
         <Route
           exact path = "/"
-          render = {props => <Homepage currentUser = {currentUser} {...props} />}
+          render = {props => <Homepage currentUser = {currentUser} {...props} display = "courses"/>}
+        />
+        <Route
+          exact path = "/serviceproviders"
+          render = {props => <Homepage currentUser = {currentUser} {...props} display = "sp"/>}
+        />
+        <Route
+          exact path = "/sessions"
+          render = {props => <Homepage currentUser = {currentUser} {...props} display = "sessions"/>}
+        />
+        <Route
+          exact path = "/statistics"
+          render = {props => <Homepage currentUser = {currentUser} {...props} display = "stats"/>}
         />
         <Route
           exact path = "/signin"
@@ -59,7 +71,7 @@ const Main = props => {
         <Route
           path = "/users/:id/courses/:course_id/edit"
           component = {withAuth(EditCourseForm)}
-          currentUser
+          currentUser = {currentUser}
         />
       </Switch>
 

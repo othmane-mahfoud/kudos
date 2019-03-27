@@ -8,7 +8,8 @@ class EditCourseForm extends Component {
     this.state = {
       courseCode: "",
       title: "",
-      school: ""
+      school: "",
+      imageUrl: ""
     };
   }
 
@@ -25,7 +26,8 @@ class EditCourseForm extends Component {
     this.setState({
       courseCode: "",
       title: "",
-      school: ""
+      school: "",
+      imageUrl: ""
     });
     this.props.history.push("/");
   };
@@ -33,11 +35,10 @@ class EditCourseForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleNewCourse}>
+      <h1 className = "main pageHeaders">Edit Course</h1>
         {this.props.errors.course && (
           <div className="alert alert-danger">{this.props.errors.course}</div>
         )}
-        <p>{this.props.match.params.id}</p>
-        <p></p>
         <label htmlFor = "courseCode">Course Code:</label>
         <input
           type="text"
@@ -54,12 +55,20 @@ class EditCourseForm extends Component {
           value={this.state.title}
           onChange={this.handleChange}
         />
-        <label htmlFor = "title">School (SSE, SBA, SHSS ...):</label>
+        <label htmlFor = "school">School (SSE, SBA, SHSS ...):</label>
         <input
           type="text"
           name="school"
           className="form-control"
           value={this.state.school}
+          onChange={this.handleChange}
+        />
+        <label htmlFor = "imageUrl">Image Url:</label>
+        <input
+          type="text"
+          name="imageUrl"
+          className="form-control"
+          value={this.state.imageUrl}
           onChange={this.handleChange}
         />
         <button type="submit" className="mt-3 btn btn-success">

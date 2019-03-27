@@ -39,8 +39,6 @@ class EditCourseForm extends Component {
         {this.props.errors.course && (
           <div className="alert alert-danger">{this.props.errors.course}</div>
         )}
-        <p>{this.props.match.params.id}</p>
-        <p></p>
         <label htmlFor = "courseCode">Course Code:</label>
         <input
           type="text"
@@ -65,12 +63,12 @@ class EditCourseForm extends Component {
           value={this.state.school}
           onChange={this.handleChange}
         />
-        <label htmlFor = "img-url">Image Url:</label>
+        <label htmlFor = "imageUrl">Image Url:</label>
         <input
           type="text"
-          name="img-url"
+          name="imageUrl"
           className="form-control"
-          value={this.state.school}
+          value={this.state.imageUrl}
           onChange={this.handleChange}
         />
         <button type="submit" className="mt-3 btn btn-success">

@@ -13,24 +13,90 @@ class Navbar extends Component {
     this.props.logout();
   }
   render(){
-    return(
-      <div class="sidenav">
-        <Link to="/" className="navbar-brand sidenav-brand">
-          <span>Kudos</span>
-        </Link>
-        <a className = "sidenav-link" href="#">
-          <i class="fas fa-university"></i>  Courses
-        </a>
-        <a className = "sidenav-link" href="#">
-          <i class="fas fa-user-tie"></i>  Service Providers
-        </a>
-        <a className = "sidenav-link" href="#">
-          <i class="fas fa-business-time"></i>  Sessions
-        </a>
-        <a className = "sidenav-link" href="#">
-          <i class="fas fa-chart-line"></i>  Statistics</a>
-      </div>
-    );
+    if(this.props.activeLink === "courses"){
+      return(
+        <div class="sidenav">
+          <Link to="/" className="navbar-brand sidenav-brand">
+            <span>Kudos</span>
+          </Link>
+          <Link className = "sidenav-link active" to="/">
+            <i class="fas fa-university"></i>  Courses
+          </Link>
+          <Link className = "sidenav-link" to="/serviceproviders">
+            <i class="fas fa-user-tie"></i>  Service Providers
+          </Link>
+          <Link className = "sidenav-link" to="/sessions">
+            <i class="fas fa-business-time"></i>  Sessions
+          </Link>
+          <Link className = "sidenav-link" to="/statistics">
+            <i class="fas fa-chart-line"></i>  Statistics
+          </Link>
+        </div>
+      );
+    }
+    else if(this.props.activeLink === "sp"){
+      return(
+        <div class="sidenav">
+          <Link to="/" className="navbar-brand sidenav-brand">
+            <span>Kudos</span>
+          </Link>
+          <Link className = "sidenav-link" to="/">
+            <i class="fas fa-university"></i>  Courses
+          </Link>
+          <Link className = "sidenav-link active" to="/serviceproviders">
+            <i class="fas fa-user-tie"></i>  Service Providers
+          </Link>
+          <Link className = "sidenav-link" to="/sessions">
+            <i class="fas fa-business-time"></i>  Sessions
+          </Link>
+          <Link className = "sidenav-link" to="/statistics">
+            <i class="fas fa-chart-line"></i>  Statistics
+          </Link>
+        </div>
+      );
+    }
+    else if(this.props.activeLink === "sessions"){
+      return(
+        <div class="sidenav">
+          <Link to="/" className="navbar-brand sidenav-brand">
+            <span>Kudos</span>
+          </Link>
+          <Link className = "sidenav-link" to="/">
+            <i class="fas fa-university"></i>  Courses
+          </Link>
+          <Link className = "sidenav-link" to="/serviceproviders">
+            <i class="fas fa-user-tie"></i>  Service Providers
+          </Link>
+          <Link className = "sidenav-link active" to="/sessions">
+            <i class="fas fa-business-time"></i>  Sessions
+          </Link>
+          <Link className = "sidenav-link" to="/statistics">
+            <i class="fas fa-chart-line"></i>  Statistics
+          </Link>
+        </div>
+      );
+    }
+    else if(this.props.activeLink === "stats"){
+      return(
+        <div class="sidenav">
+          <Link to="/" className="navbar-brand sidenav-brand">
+            <span>Kudos</span>
+          </Link>
+          <Link className = "sidenav-link" to="/">
+            <i class="fas fa-university"></i>  Courses
+          </Link>
+          <Link className = "sidenav-link" to="/serviceproviders">
+            <i class="fas fa-user-tie"></i>  Service Providers
+          </Link>
+          <Link className = "sidenav-link" to="/sessions">
+            <i class="fas fa-business-time"></i>  Sessions
+          </Link>
+          <Link className = "sidenav-link active" to="/statistics">
+            <i class="fas fa-chart-line"></i>  Statistics
+          </Link>
+        </div>
+      );
+    }
   }
 }
 

@@ -175,6 +175,12 @@ a.btn.btn-danger:hover {
   cursor: pointer;
 }
 
+.sidenav a.active {
+  color: #6AAEE1;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
@@ -195,4 +201,21 @@ a.btn.btn-danger:hover {
 
 .pageHeaders {
   color: #384A5C;
+}
+
+.controls {
+  display: flex;
+}
+
+.searchBar {
+  margin-left: 10px;
+  width: 61%;
+  height: 40px;
+  border: 1px solid #66C89C;
+  border-radius: 4px;
+  background-image: url('images/search-icon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  padding-left: 40px;
 }

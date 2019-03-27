@@ -7,6 +7,8 @@ import { authUser } from "../store/actions/auth";
 import { removeError } from "../store/actions/errors";
 import withAuth from "../hocs/withAuth";
 import MessageForm from "../containers/MessageForm";
+import CourseForm from "../containers/CourseForm";
+import EditCourseForm from "../containers/EditCourseForm";
 
 const Main = props => {
   const { authUser, errors, removeError, currentUser } = props;
@@ -15,7 +17,19 @@ const Main = props => {
       <Switch>
         <Route
           exact path = "/"
-          render = {props => <Homepage currentUser = {currentUser} {...props} />}
+          render = {props => <Homepage currentUser = {currentUser} {...props} display = "courses"/>}
+        />
+        <Route
+          exact path = "/serviceproviders"
+          render = {props => <Homepage currentUser = {currentUser} {...props} display = "sp"/>}
+        />
+        <Route
+          exact path = "/sessions"
+          render = {props => <Homepage currentUser = {currentUser} {...props} display = "sessions"/>}
+        />
+        <Route
+          exact path = "/statistics"
+          render = {props => <Homepage currentUser = {currentUser} {...props} display = "stats"/>}
         />
         <Route
           exact path = "/signin"
@@ -49,6 +63,15 @@ const Main = props => {
         <Route
           path = "/users/:id/messages/new"
           component = {withAuth(MessageForm)}
+        />
+        <Route
+          path = "/users/:id/courses/new"
+          component = {withAuth(CourseForm)}
+        />
+        <Route
+          path = "/users/:id/courses/:course_id/edit"
+          component = {withAuth(EditCourseForm)}
+          currentUser = {currentUser}
         />
       </Switch>
 

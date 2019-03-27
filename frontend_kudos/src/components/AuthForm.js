@@ -45,7 +45,7 @@ export default class AuthForm extends Component {
     });
 
     return(
-      <div>
+      <div className = "main">
         <div className = "row justify-content-md-center text-center">
           <div className = "col-md-6">
             <form onSubmit = {this.handleSubmit}>
@@ -96,7 +96,7 @@ export default class AuthForm extends Component {
                 </div>
               )}
               <button
-                className = "btn btn-primary btn-block btn-lg"
+                className = "mt-3 btn btn-primary btn-block btn-lg"
                 type = "submit"
               >
                 {buttonText}

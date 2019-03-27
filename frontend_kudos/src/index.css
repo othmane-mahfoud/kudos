@@ -2,10 +2,18 @@ body {
   background-color: #e6ecf0;
 }
 
+.main {
+  margin-top: 70px;
+}
+
 /* Nav */
 
 .navbar {
   margin-bottom: 1rem;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
 .navbar a {
@@ -21,10 +29,16 @@ body {
 
 .navbar-brand > img {
   display: inline-block;
-  width: 20px;
+  width: 25px;
   margin-bottom: 2px;
+  padding-bottom: 4px;
   margin-right: 5px;
   border-radius: 2px;
+}
+
+.navbar-brand > span {
+  font-family: 'Lobster', cursive;
+  font-size: 25px;
 }
 
 ul.nav.navbar-nav li {
@@ -59,12 +73,22 @@ ul.nav.navbar-nav li a:hover {
   align-items: center;
   justify-content: center;
   z-index: -1;
-  background-image: url("./images/signed-out-home.jpg");
+  background-image: url("./images/blackboard.jpg");
   text-align: center;
   background-position: center center;
   background-size: cover;
   color: #fff;
-  text-shadow: 0 0 8px #66757f;
+  text-shadow: 0 0 15px #66757f;
+}
+
+h1.chalk {
+  font-family: 'Indie Flower', cursive;
+  font-size: 50px;
+}
+
+h3.chalk {
+  font-family: 'Indie Flower', cursive;
+  font-size: 40px;
 }
 
 /* Index */
@@ -79,11 +103,36 @@ ul.nav.navbar-nav li a:hover {
   background-color: #e6ecf0;
 }
 
+#courses:not(.no-hover) .list-group-item:hover{
+  background-color: #e6ecf0;
+}
+
+.card {
+  height: 420px;
+  margin-bottom: 10px;
+}
+
+.card-img-top {
+  padding: 20px;
+}
+
+.card-title {
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+}
+
+a.deleteCourse {
+  float: right;
+  margin-right: 3px;
+  margin-top: 10px;
+}
+
 .timeline-image {
-  border-radius: 50px;
   height: 40px;
   width: 40px;
   margin: 2px 30px 10px 10px;
+  padding-top: 3px;
 }
 
 .btn:hover {
@@ -93,4 +142,80 @@ ul.nav.navbar-nav li a:hover {
 a.btn.btn-danger,
 a.btn.btn-danger:hover {
   color: white;
+}
+
+/* Sidebar */
+
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 180px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 0; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #384A5C;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 15px;
+  /* margin-top: 64px; */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 12px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #e6ecf0;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #6AAEE1;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.sidenav a.active {
+  color: #6AAEE1;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/* Course list */
+
+.courseList {
+  margin-left: 180px;
+  margin-top: 70px;
+}
+
+.sidenav-brand > span{
+  margin-top: 5px;
+  color: #384A5C;
+}
+
+.pageHeaders {
+  color: #384A5C;
+}
+
+.controls {
+  display: flex;
+}
+
+.searchBar {
+  margin-left: 10px;
+  width: 61%;
+  height: 40px;
+  border: 1px solid #66C89C;
+  border-radius: 4px;
+  background-image: url('images/search-icon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  padding-left: 40px;
 }

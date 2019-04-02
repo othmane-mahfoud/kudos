@@ -56,18 +56,39 @@ class CourseList extends Component {
         currentUser={currentUser}
       />
     ));
-    return (
-      <div>
-        <h1 className = "pageHeaders">Course List</h1>
-        <div className = "controls">
-          <Link to = {`/users/${this.props.currentUser.user.id}/courses/new`} className = "btn btn-info mb-3">Add Course</Link>
-          <input type="text" className="searchBar" onChange={this.handleChange} placeholder="Search..."/>
+
+    if(courseList.length === 0){
+      return (
+        <div>
+          <h1 className = "pageHeaders">Course List</h1>
+          <div className = "controls">
+            <Link to = {`/users/${this.props.currentUser.user.id}/courses/new`} className = "btn btn-info mb-3">Add Course</Link>
+            <input type="text" className="searchBar" onChange={this.handleChange} placeholder="Search..."/>
+          </div>
+          <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4 ">Oups!</h1>
+              <p class="lead">It looks like there is no course with the name you're searching for. Try again or contact one of our coordinators to check the availability of this course and if it can be created</p>
+            </div>
+          </div>
         </div>
-        <div className = "row">
-          {courseList}
+      );
+    }
+    else{
+      return (
+        <div>
+          <h1 className = "pageHeaders">Course List</h1>
+          <div className = "controls">
+            <Link to = {`/users/${this.props.currentUser.user.id}/courses/new`} className = "btn btn-info mb-3">Add Course</Link>
+            <input type="text" className="searchBar" onChange={this.handleChange} placeholder="Search..."/>
+          </div>
+          <div className = "row">
+            {courseList}
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
+
   }
 }
 

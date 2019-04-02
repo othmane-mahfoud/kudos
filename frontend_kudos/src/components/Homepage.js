@@ -37,6 +37,9 @@ const Homepage = ({currentUser, display}) => {
           />
           <div className = "courseList">
             <h1 className = "pageHeaders">Service Providers</h1>
+            <div class="alert alert-info" role="alert">
+              This page is work in process
+            </div>
           </div>
         </div>
       );
@@ -49,6 +52,9 @@ const Homepage = ({currentUser, display}) => {
           />
           <div className = "courseList">
             <h1 className = "pageHeaders">Sessions Management</h1>
+            <div class="alert alert-info" role="alert">
+              This page is work in process
+            </div>
           </div>
         </div>
       );
@@ -61,6 +67,9 @@ const Homepage = ({currentUser, display}) => {
           />
           <div className = "courseList">
             <h1 className = "pageHeaders">Statistics</h1>
+            <div class="alert alert-info" role="alert">
+              This page is work in process
+            </div>
           </div>
         </div>
       );

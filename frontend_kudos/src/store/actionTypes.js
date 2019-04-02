@@ -7,3 +7,7 @@ export const LOAD_COURSES = "LOAD_COURSES";
 export const GET_COURSE = "GET_COURSE";
 export const EDIT_COURSE = "EDIT_COURSE";
 export const REMOVE_COURSE = "REMOVE_COURSE";
+export const LOAD_SP = "LOAD_SP";
+export const GET_SP = "GET_SP";
+export const EDIT_SP = "EDIT_SP";
+export const REMOVE_SP = "REMOVE_SP";

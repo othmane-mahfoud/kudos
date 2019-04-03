@@ -31,3 +31,14 @@ exports.editUser = async function(req, res, next){
     return next(e);
   }
 };
+
+exports.getServiceProviders = async function(req, res, next){
+  try {
+    let users = await db.User.find({role: "serviceprovider"})
+      .sort({firstName: "asc"});
+    return res.status(200).json(users);
+  }
+  catch(err) {
+    return next(err);
+  }
+}

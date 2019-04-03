@@ -29,9 +29,10 @@ class ServiceProvidersList extends Component {
     if (e.target.value !== "") {
       currentList = this.props.serviceProviders;
       newList = currentList.filter(serviceProvider => {
-        const lc = serviceProvider.title.toLowerCase();
+        const fnlc = serviceProvider.firstName.toLowerCase();
+        const lnlc = serviceProvider.lastName.toLowerCase();
         const filter = e.target.value.toLowerCase();
-        return lc.includes(filter);
+        return (fnlc.includes(filter) || lnlc.includes(filter));
       });
     } else {
       newList = this.props.serviceProviders;
@@ -46,21 +47,40 @@ class ServiceProvidersList extends Component {
     let serviceProvidersList = this.state.filtered.map(sp => (
       <ServiceProviderItem
         key={sp._id}
-        serviceProvidersId={sp._id}
+        serviceProviderId={sp._id}
         firstName={sp.firstName}
         lastName={sp.lastName}
         profileImageUrl={sp.profileImageUrl}
         school={sp.school}
         fieldOfStudy={sp.fieldOfStudy}
+        serviceType={sp.serviceType}
         removeServiceProvider={removeServiceProvider.bind(this, currentUser, sp._id)}
         currentUser={currentUser}
       />
     ));
+    if(serviceProvidersList.length === 0){
+      return (
+        <div>
+          <h1 className = "pageHeaders">Service Providers</h1>
+          <div className = "controls">
+            <Link to = "#" className = "btn btn-info mb-3">New Service Provider</Link>
+            <input type="text" className="serviceProviderSearchBar" onChange={this.handleChange} placeholder="Search..."/>
+          </div>
+          <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4 ">Oups!</h1>
+              <p class="lead">It looks like there is no service provider with the name you're searching for. Try again or contact one of our coordinators to check the availability of this person</p>
+            </div>
+          </div>
+        </div>
+      );
+    }
     return (
       <div>
         <h1 className = "pageHeaders">Service Providers</h1>
         <div className = "controls">
-          <input type="text" className="searchBar" onChange={this.handleChange} placeholder="Search..."/>
+          <Link to = "#" className = "btn btn-info mb-3">New Service Provider</Link>
+          <input type="text" className="serviceProviderSearchBar" onChange={this.handleChange} placeholder="Search..."/>
         </div>
         <div className = "row">
           {serviceProvidersList}

@@ -1,12 +1,12 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import CourseList from "../containers/CourseList";
+import ServiceProvidersList from "../containers/ServiceProvidersList";
 // import UserAside from "./UserAside";
 
-const CourseTimeline = props => {
+const ServiceProvidersTimeline = props => {
   return (
     <div>
-      <CourseList
+      <ServiceProvidersList
         currentUser = {props.currentUser}
         className = "courseList"
       />
@@ -14,4 +14,4 @@ const CourseTimeline = props => {
   );
 }
 
-export default CourseTimeline;
+export default ServiceProvidersTimeline;

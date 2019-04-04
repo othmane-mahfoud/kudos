@@ -24,6 +24,10 @@ const Main = props => {
           render = {props => <Homepage currentUser = {currentUser} {...props} display = "sp"/>}
         />
         <Route
+          exact path = "/serviceProviders/new"
+          render = {props => <Homepage currentUser = {currentUser} {...props} display = "newsp"/>}
+        />
+        <Route
           exact path = "/sessions"
           render = {props => <Homepage currentUser = {currentUser} {...props} display = "sessions"/>}
         />

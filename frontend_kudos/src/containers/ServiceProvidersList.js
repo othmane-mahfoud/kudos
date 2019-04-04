@@ -63,7 +63,7 @@ class ServiceProvidersList extends Component {
         <div>
           <h1 className = "pageHeaders">Service Providers</h1>
           <div className = "controls">
-            <Link to = "#" className = "btn btn-info mb-3">New Service Provider</Link>
+            <Link to = "#" className = "btn btn-info mb-3">Add Service Provider</Link>
             <input type="text" className="serviceProviderSearchBar" onChange={this.handleChange} placeholder="Search..."/>
           </div>
           <div class="jumbotron jumbotron-fluid">
@@ -79,7 +79,7 @@ class ServiceProvidersList extends Component {
       <div>
         <h1 className = "pageHeaders">Service Providers</h1>
         <div className = "controls">
-          <Link to = "#" className = "btn btn-info mb-3">New Service Provider</Link>
+          <Link to = "#" className = "btn btn-info mb-3">Add Service Provider</Link>
           <input type="text" className="serviceProviderSearchBar" onChange={this.handleChange} placeholder="Search..."/>
         </div>
         <div className = "row">

@@ -52,7 +52,7 @@ export const fetchServiceProviders = () => {
 //
 export const removeServiceProvider = (user_id, serviceProvider_id) => {
   return dispatch => {
-    return apiCall("delete", `/api/users/${user_id}/serviceProviders/${serviceProvider_id}`)
+    return apiCall("delete", `/api/users/${serviceProvider_id}`)
       .then(() => dispatch(remove(serviceProvider_id)))
       .catch(err => dispatch(addError(err.message)));
   }

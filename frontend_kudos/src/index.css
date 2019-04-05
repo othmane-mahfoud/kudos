@@ -99,6 +99,13 @@ h3.chalk {
   padding: 7px 20px 12px;
 }
 
+#users .list-group-item {
+  width: 100%;
+  display: inline-block;
+  align-items: flex-start;
+  /* padding: 7px 20px 12px; */
+}
+
 #messages:not(.no-hover) .list-group-item:hover{
   background-color: #e6ecf0;
 }
@@ -210,6 +217,52 @@ a.btn.btn-danger:hover {
 .searchBar {
   margin-left: 10px;
   width: 61%;
+  height: 40px;
+  border: 1px solid #66C89C;
+  border-radius: 4px;
+  background-image: url('images/search-icon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  padding-left: 40px;
+}
+
+/* Service Providers */
+
+.serviceProviderText {
+  margin: 0px;
+}
+
+.serviceProviderImage {
+  margin-bottom: 0px;
+}
+
+.serviceProviderSearchBar {
+  margin-left: 10px;
+  width: 53.5%;
+  height: 40px;
+  border: 1px solid #66C89C;
+  border-radius: 4px;
+  background-image: url('images/search-icon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  padding-left: 40px;
+}
+
+a.addSpBtn {
+  float: right;
+}
+
+/* users list */
+
+.usersList {
+  margin-top: 10px;
+}
+
+.learnerSearchBar {
+  margin-left: 15px;
+  width: 53.5%;
   height: 40px;
   border: 1px solid #66C89C;
   border-radius: 4px;

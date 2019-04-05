@@ -1,54 +1,41 @@
 import React from "react";
 import Moment from "react-moment";
 import { Link } from "react-router-dom";
-import DefaultCourseImg from "../images/courses/default.png";
-import SSECourseImg from "../images/courses/sse.png";
-import SBACourseImg from "../images/courses/sba.png";
-import SHSSCourseImg from "../images/courses/shss.png";
+import DefaultServiceProviderImg from "../images/service_providers/default.png";
 
-const CourseItem = ({
-  courseId,
-  date,
-  courseCode,
-  title,
+const ServiceProviderItem = ({
+  serviceProviderId,
+  firstName,
+  lastName,
+  profileImageUrl,
+  serviceType,
   school,
-  imageUrl,
-  removeCourse,
+  fieldOfStudy,
+  removeServiceProvider,
   currentUser,
   isCorrectUser
 }) => {
-  var courseImage = DefaultCourseImg;
-  if(imageUrl){
-    courseImage = imageUrl;
-  }
-  else{
-    if(school === "SSE") {
-      courseImage = SSECourseImg;
-    }
-    else if(school === "SBA") {
-      courseImage = SBACourseImg;
-    }
-    else if(school === "SHSS"){
-      courseImage = SHSSCourseImg;
-    }
+  var imageUrl = DefaultServiceProviderImg;
+  if(profileImageUrl){
+    imageUrl = profileImageUrl;
   }
   return (
     <div className="col-sm-3">
       <div className="card">
         <img
-          src = {courseImage}
-          className = "card-img-top"
-          alt = {school}
+          src = {imageUrl}
+          className = "card-img-top serviceProviderImage"
+          alt = {firstName}
         />
         <div className="card-body">
-          <h5 className="card-title">{title}</h5>
-          <p className="card-text"><small class="text-muted">{courseCode}</small></p>
-          <a className = "mb-2 btn btn-sm btn-danger deleteCourse" onClick = {removeCourse}>Delete</a>
-          <Link className = "mb-2 btn btn-sm btn-info text-white deleteCourse" to = {`/users/${currentUser._id}/courses/${courseId}/edit`}>Edit</Link>
+          <h5 className="card-title">{firstName} {lastName}</h5>
+          <p className="card-text serviceProviderText"><small class="text-muted">{serviceType.toUpperCase()}</small></p>
+          <p className="card-text serviceProviderText"><small class="text-muted">{school} - {fieldOfStudy}</small></p>
+          <a className = "mb-2 btn btn-sm btn-danger deleteCourse" onClick = {removeServiceProvider}>Delete</a>
         </div>
       </div>
     </div>
   );
 }
 
-export default CourseItem;
+export default ServiceProviderItem;

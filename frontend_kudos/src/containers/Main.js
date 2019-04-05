@@ -20,8 +20,12 @@ const Main = props => {
           render = {props => <Homepage currentUser = {currentUser} {...props} display = "courses"/>}
         />
         <Route
-          exact path = "/serviceproviders"
+          exact path = "/serviceProviders"
           render = {props => <Homepage currentUser = {currentUser} {...props} display = "sp"/>}
+        />
+        <Route
+          exact path = "/serviceProviders/new"
+          render = {props => <Homepage currentUser = {currentUser} {...props} display = "newsp"/>}
         />
         <Route
           exact path = "/sessions"

@@ -42,3 +42,14 @@ exports.getServiceProviders = async function(req, res, next){
     return next(err);
   }
 }
+
+exports.getLearners = async function(req, res, next){
+  try {
+    let learners = await db.User.find({role: "learner"})
+      .sort({firstName: "asc"});
+    return res.status(200).json(learners);
+  }
+  catch(err) {
+    return next(err);
+  }
+}

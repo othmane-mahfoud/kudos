@@ -2,6 +2,8 @@ import React from "react";
 import {Link} from "react-router-dom";
 // import MessageTimeline from "./MessageTimeline";
 import CourseTimeline from "./CourseTimeline";
+import ServiceProvidersTimeline from "./ServiceProvidersTimeline";
+import UsersTimeline from "./UsersTimeline";
 import Sidenav from "../containers/Sidenav";
 
 const Homepage = ({currentUser, display}) => {
@@ -36,10 +38,7 @@ const Homepage = ({currentUser, display}) => {
             activeLink = "sp"
           />
           <div className = "courseList">
-            <h1 className = "pageHeaders">Service Providers</h1>
-            <div class="alert alert-info" role="alert">
-              This page is work in process
-            </div>
+            < ServiceProvidersTimeline />
           </div>
         </div>
       );
@@ -53,7 +52,7 @@ const Homepage = ({currentUser, display}) => {
           <div className = "courseList">
             <h1 className = "pageHeaders">Sessions Management</h1>
             <div class="alert alert-info" role="alert">
-              This page is work in process
+              This page is work in progress
             </div>
           </div>
         </div>
@@ -68,8 +67,20 @@ const Homepage = ({currentUser, display}) => {
           <div className = "courseList">
             <h1 className = "pageHeaders">Statistics</h1>
             <div class="alert alert-info" role="alert">
-              This page is work in process
+              This page is work in progress
             </div>
+          </div>
+        </div>
+      );
+    }
+    else if(display === "newsp") {
+      return (
+        <div>
+          < Sidenav
+            activeLink = "sp"
+          />
+          <div className = "courseList">
+            < UsersTimeline />
           </div>
         </div>
       );

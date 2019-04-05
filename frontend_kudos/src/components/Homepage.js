@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 // import MessageTimeline from "./MessageTimeline";
 import CourseTimeline from "./CourseTimeline";
 import ServiceProvidersTimeline from "./ServiceProvidersTimeline";
+import UsersTimeline from "./UsersTimeline";
 import Sidenav from "../containers/Sidenav";
 
 const Homepage = ({currentUser, display}) => {
@@ -68,6 +69,18 @@ const Homepage = ({currentUser, display}) => {
             <div class="alert alert-info" role="alert">
               This page is work in progress
             </div>
+          </div>
+        </div>
+      );
+    }
+    else if(display === "newsp") {
+      return (
+        <div>
+          < Sidenav
+            activeLink = "sp"
+          />
+          <div className = "courseList">
+            < UsersTimeline />
           </div>
         </div>
       );

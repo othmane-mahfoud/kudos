@@ -99,6 +99,13 @@ h3.chalk {
   padding: 7px 20px 12px;
 }
 
+#users .list-group-item {
+  width: 100%;
+  display: inline-block;
+  align-items: flex-start;
+  /* padding: 7px 20px 12px; */
+}
+
 #messages:not(.no-hover) .list-group-item:hover{
   background-color: #e6ecf0;
 }
@@ -241,4 +248,8 @@ a.btn.btn-danger:hover {
   background-repeat: no-repeat;
   background-size: 20px;
   padding-left: 40px;
+}
+
+a.addSpBtn {
+  float: right;
 }

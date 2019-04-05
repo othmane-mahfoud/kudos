@@ -4,7 +4,10 @@ import UsersList from "../containers/UsersList";
 const UsersTimeline = props => {
   return (
     <div className = "row">
-      <UsersList />
+      <UsersList
+        currentUser = {props.currentUser}
+        className = "usersList"
+      />
     </div>
   );
 }

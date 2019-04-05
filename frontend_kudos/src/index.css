@@ -253,3 +253,22 @@ a.btn.btn-danger:hover {
 a.addSpBtn {
   float: right;
 }
+
+/* users list */
+
+.usersList {
+  margin-top: 10px;
+}
+
+.learnerSearchBar {
+  margin-left: 15px;
+  width: 53.5%;
+  height: 40px;
+  border: 1px solid #66C89C;
+  border-radius: 4px;
+  background-image: url('images/search-icon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  padding-left: 40px;
+}

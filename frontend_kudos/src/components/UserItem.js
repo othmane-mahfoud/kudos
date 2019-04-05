@@ -17,8 +17,9 @@ const UserItem = ({
   <div>
     <li className = "list-group-item">
       <div className = "message-area">
-        <span>{firstName} {lastName} <small><i>{school} - {fieldOfStudy}</i></small></span>
+        <span><strong>{firstName} {lastName}</strong></span><br></br>
         <a className = "mb-2 btn btn-sm btn-success text-white addSpBtn" onClick = {removeServiceProvider}>Add</a>
+        <small><i>{school} - {fieldOfStudy}</i></small>
       </div>
     </li>
   </div>

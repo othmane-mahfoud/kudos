@@ -6,11 +6,23 @@ const {
   deleteUser,
   editUser,
   getServiceProviders,
-  getLearners
+  getLearners,
+  addTutor,
+  addMentor,
+  removeServiceProvider
 } = require("../handlers/users");
 
 router.route("/serviceProviders")
   .get(getServiceProviders);
+
+router.route("/serviceProviders/newTutor/:user_id")
+  .put(addTutor);
+
+router.route("/serviceProviders/newMentor/:user_id")
+  .put(addMentor);
+
+router.route("/serviceProviders/removeServiceProvider/:user_id")
+  .put(removeServiceProvider);
 
 router.route("/learners")
   .get(getLearners);

@@ -53,3 +53,36 @@ exports.getLearners = async function(req, res, next){
     return next(err);
   }
 }
+
+exports.addTutor = async function(req, res, next){
+  try {
+    let foundUser = await db.User.findOneAndUpdate({_id: req.params.user_id}, {role: "serviceprovider", serviceType: "tutor"}, {new: true});
+    await foundUser.save();
+    return res.status(200).json(foundUser);
+  }
+  catch(e) {
+    return next(e);
+  }
+};
+
+exports.addMentor = async function(req, res, next){
+  try {
+    let foundUser = await db.User.findOneAndUpdate({_id: req.params.user_id}, {role: "serviceprovider", serviceType: "mentor"}, {new: true});
+    await foundUser.save();
+    return res.status(200).json(foundUser);
+  }
+  catch(e) {
+    return next(e);
+  }
+};
+
+exports.removeServiceProvider = async function(req, res, next){
+  try {
+    let foundUser = await db.User.findOneAndUpdate({_id: req.params.user_id}, {role: "learner", serviceType: "none"}, {new: true});
+    await foundUser.save();
+    return res.status(200).json(foundUser);
+  }
+  catch(e) {
+    return next(e);
+  }
+};

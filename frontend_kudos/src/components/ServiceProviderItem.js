@@ -31,7 +31,7 @@ const ServiceProviderItem = ({
           <h5 className="card-title">{firstName} {lastName}</h5>
           <p className="card-text serviceProviderText"><small class="text-muted">{serviceType.toUpperCase()}</small></p>
           <p className="card-text serviceProviderText"><small class="text-muted">{school} - {fieldOfStudy}</small></p>
-          <a className = "mb-2 btn btn-sm btn-danger deleteCourse" onClick = {removeServiceProvider}>Delete</a>
+          <a className = "mb-2 btn btn-sm btn-danger deleteCourse" onClick = {removeServiceProvider}>Remove</a>
         </div>
       </div>
     </div>

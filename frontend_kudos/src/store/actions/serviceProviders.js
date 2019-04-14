@@ -1,6 +1,6 @@
 import { apiCall } from "../../services/api";
 import { addError } from "./errors";
-import { LOAD_SERVICE_PROVIDERS, GET_SERVICE_PROVIDER, REMOVE_SERVICE_PROVIDER, EDIT_SERVICE_PROVIDER } from "../actionTypes";
+import { LOAD_SERVICE_PROVIDERS, GET_SERVICE_PROVIDER, REMOVE_SERVICE_PROVIDER, ADD_TUTOR, ADD_MENTOR} from "../actionTypes";
 
 export const loadServiceProviders = serviceProviders => ({
   type: LOAD_SERVICE_PROVIDERS,
@@ -9,11 +9,6 @@ export const loadServiceProviders = serviceProviders => ({
 
 export const getServiceProvider = serviceProvider => ({
   type: GET_SERVICE_PROVIDER,
-  serviceProvider
-});
-
-export const editServiceProvider = serviceProvider => ({
-  type: EDIT_SERVICE_PROVIDER,
   serviceProvider
 });
 
@@ -50,6 +45,7 @@ export const fetchServiceProviders = () => {
 //   }
 // }
 //
+
 export const removeServiceProvider = (user_id, serviceProvider_id) => {
   return dispatch => {
     return apiCall("delete", `/api/users/${serviceProvider_id}`)

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchUsers, fetchLearners } from "../store/actions/users";
+import { fetchUsers, fetchLearners, newTutor, newMentor } from "../store/actions/users";
 import UserItem from "../components/UserItem";
 
 class UsersList extends Component {
@@ -49,7 +49,7 @@ class UsersList extends Component {
     let learnersList = this.state.filtered.map(u => (
       <UserItem
         key={u._id}
-        serviceProviderId={u._id}
+        userId={u._id}
         firstName={u.firstName}
         lastName={u.lastName}
         profileImageUrl={u.profileImageUrl}
@@ -57,6 +57,8 @@ class UsersList extends Component {
         fieldOfStudy={u.fieldOfStudy}
         serviceType={u.serviceType}
         currentUser={currentUser}
+        newTutor={newTutor.bind(this, currentUser, u._id)}
+        newMentor={newMentor.bind(this, currentUser, u._id)}
       />
     ));
     if(learnersList.length === 0) {
@@ -96,10 +98,10 @@ class UsersList extends Component {
 function mapStateToProps(state) {
   return {
     learners: state.learners,
-    currentUser: state.currentUser.user.id
+    currentUser: state.currentUser
   };
 }
 
-export default connect(mapStateToProps, { fetchUsers, fetchLearners })(
+export default connect(mapStateToProps, { fetchUsers, fetchLearners, newMentor, newTutor })(
   UsersList
 );

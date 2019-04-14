@@ -15,17 +15,17 @@ const {
 router.route("/serviceProviders")
   .get(getServiceProviders);
 
-router.route("/serviceProviders/newTutor/:user_id")
-  .put(addTutor);
-
-router.route("/serviceProviders/newMentor/:user_id")
-  .put(addMentor);
-
 router.route("/serviceProviders/removeServiceProvider/:user_id")
   .put(removeServiceProvider);
 
 router.route("/learners")
   .get(getLearners);
+
+router.route("/learners/makeTutor/:user_id")
+  .put(addTutor);
+
+router.route("/learners/makeMentor/:user_id")
+  .put(addMentor);
 
 router.route("/:user_id")
   .get(getUser)
